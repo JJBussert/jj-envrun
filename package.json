@@ -1,0 +1,48 @@
+{
+  "name": "jj-envrun",
+  "version": "1.0.0",
+  "description": "Execute a command with a specific environment variable from an env file",
+  "type": "module",
+  "main": "/src/envrun.js",
+  "scripts": {
+    "test": "vitest --run && npm run test-cli-abc && npm run test-cli-xyz && npm run test-cleanup",
+    "test-cli-abc": "node ./src/cli.cjs abc \"echo xyz\" -e .env.test",
+    "test-cli-xyz": "node ./src/cli.cjs xyz \"echo abc\" -e .env.test",
+    "test-cleanup": "rimraf .env.test",
+    "test-units": "vitest",
+    "start": "node src/envrun.js"
+  },
+  "bin": {
+    "jj-envrun": "./src/cli.cjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JJBussert/jj-envrun.git"
+  },
+  "keywords": [
+    "env",
+    "cli",
+    "dotenv",
+    "yargs",
+    "vitest"
+  ],
+  "author": "JJ Bussert",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JJBussert/jj-envrun/issues"
+  },
+  "homepage": "https://github.com/JJBussert/jj-envrun#readme",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "esm": "^3.2.25",
+    "yargs": "^17.3.1"
+  },
+  "files": [
+    "src"
+  ],
+  "devDependencies": {
+    "rimraf": "^5.0.0",
+    "vite": "^4.2.2",
+    "vitest": "^0.30.1"
+  }
+}

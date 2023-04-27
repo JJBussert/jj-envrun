@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "type": "node",
+        "request": "launch",
+        "name": "Debug jj-envrun",
+        "program": "${workspaceFolder}/src/cli.js",
+        "args": ["HELLO_WORLD", "echo Hello World!", "--envFile", ".env"]
+      }
+    ]
+  }
+  
