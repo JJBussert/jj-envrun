@@ -1,6 +1,6 @@
 {
   "name": "jj-envrun",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Execute a command with a specific environment variable from an env file",
   "type": "module",
   "main": "/src/envrun.js",
@@ -35,6 +35,7 @@
   "homepage": "https://github.com/JJBussert/jj-envrun#readme",
   "dependencies": {
     "jj-envset": "^1.0.6",
+    "jj-run": "^1.0.2",
     "yargs": "^17.3.1"
   },
   "files": [
