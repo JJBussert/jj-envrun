@@ -1,5 +1,5 @@
 import { expect, test } from 'vitest';
-import { envrun } from '../src/envrun.js';
+import { envrun } from '../src/index.js';
 import fs from 'fs';
 import { execSync } from 'child_process';
 
@@ -14,7 +14,7 @@ test('envrun: should save the output of the command to the specified key in the 
   }
 
   // Call the envrun function
-  envrun(targetKey, command, envFile);
+  envrun(targetKey, command, false, envFile);
 
   // Read the updated env file
   const envContent = fs.readFileSync(envFile, 'utf-8');
@@ -36,7 +36,7 @@ test('envrun: should update an existing env file with new content', async () => 
   fs.writeFileSync(envFile, 'INITIAL_KEY="Initial Value"\n');
 
   // Call the envrun function to update the env file with new content
-  envrun(targetKey, command, envFile);
+  envrun(targetKey, command, false, envFile);
 
   // Read the updated env file
   const envContent = fs.readFileSync(envFile, 'utf-8');
@@ -59,7 +59,7 @@ test('envrun: should update an quote existing values if they were not', async ()
   fs.writeFileSync(envFile, 'INITIAL_KEY=Initial Value\n');
 
   // Call the envrun function to update the env file with new content
-  envrun(targetKey, command, envFile);
+  envrun(targetKey, command, false, envFile);
 
   // Read the updated env file
   const envContent = fs.readFileSync(envFile, 'utf-8');
